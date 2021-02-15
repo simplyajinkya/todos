@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TodoList from "./TodoList";
 
 function App() {
+  const [state, setState] = useState({ count: 4, theme: "blue" });
+  const count = state.count;
+  const theme = state.theme;
+
+  function decr() {
+    setState(prevState => {
+      return { count: prevState.count - 1 }
+    });
+  }
+
+  function incr() {
+    setState(prevState => {
+      return { count: prevState.count + 1 };
+    });
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={decr}> - </button>
+      <span>{count} count</span>
+      <button onClick={incr}> + </button>
+      <TodoList todoList={[{ key: 'first', name: 'first', complete: false }]} toggleTodo={false}></TodoList>
+    </>
   );
 }
 
