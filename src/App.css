@@ -29,12 +29,17 @@
 }
 
 .btn-wrapper button {
-  background-color: red;
+  background-color: rgb(8, 129, 228);
   border: 0;
   padding: 10px;
   border-radius: 4px;
   color: #fff;
   box-shadow: 0 1px 5px #ccc;
+}
+
+.btn-wrapper button.danger {
+  background-color: rgb(194, 5, 5);
+  margin: 5px 0 0;
 }
 
 .img-wrapper img {
@@ -59,6 +64,19 @@
   display: inline-block;
   width: 120px;
   padding: 20px;
+}
+
+.cart-count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background-color: #f00;
+  padding: 7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
 }
 
 @keyframes App-logo-spin {
